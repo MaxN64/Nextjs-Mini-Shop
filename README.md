@@ -27,3 +27,8 @@ This is a minimalist e-commerce website built with Nextjs and CSS. You can find 
 - [x] Home page
 
 ![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113732.png)
+![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113755.png)
+![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113642.png)
+![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113425.png)
+![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113546.png)
+![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113718.png)
