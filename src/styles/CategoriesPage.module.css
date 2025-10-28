@@ -1,0 +1,14 @@
+.mainContainer {
+  margin-top: 15rem;
+  margin-bottom: 10rem;
+}
+.grid {
+  grid-gap: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid a {
+  text-decoration: none;
+  color: black;
+}
