@@ -1,34 +1,84 @@
-# 🛒 MiniShop E-commerce
+# MiniShop — Next.js E-commerce Showcase
 
-## About The Project
-This is a minimalist e-commerce website built with Nextjs and CSS. You can find different products in each category and add them into your shopping cart. 
+**A responsive storefront built with Next.js, React and a client-side shopping cart.**
 
+**Language:** English · [Deutsch](README.de.md) · [Original notes](README.legacy.md)
 
+**Stack:** Next.js 13 · React 18 · Context API / useReducer · CSS / Tailwind · local JSON product catalog
 
-## Features
-- This application was built using Next.js, React Hooks (useState, useContext,useReducer, useEffects, useCallback), Firebase realtime database, React icons, etc.
-- Custom hook (useHttp) to fetch data from Firebase dynamically.
-- Global context for shopping cart
-- Categories component to filter search results based on type.
-- Dynamic Routes with `next-router`
-- Fonts with `@next/font`
-- Icons with [Font Awesome 5](https://fontawesome.com/)
-- Responsive design
+> **Status:** Portfolio / learning project. The current home page reads a local product catalog (`src/data/products-local.json`). No payment processing, checkout backend, order fulfilment or hosted production service is demonstrated by this repository.
 
+## At a glance
 
-## Components
+- Product discovery through home-page highlights, trending products, categories and product detail routes.
+- Add, remove and delete items from a shopping cart managed by React Context and a reducer.
+- Responsive storefront layout and reusable UI components.
+- Product catalog and images stored in the repository; the app can be explored without a live database.
 
-- [x] Shopping Cart
-- [x] Notifications
-- [x] Navbar
-- [x] Product detail page
-- [x] Trendings
-- [x] Categories
-- [x] Home page
+## Screenshots
 
-![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113732.png)
-![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113755.png)
-![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113642.png)
-![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113425.png)
-![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113546.png)
-![Превью проекта](https://github.com/MaxN64/Mini-Shop-Nextjs/blob/master/public/docs/113718.png)
+These screenshots are **existing repository assets**, not new captures from a verified deployment.
+
+![MiniShop interface preview 1](public/docs/113732.png)
+
+![MiniShop interface preview 2](public/docs/113642.png)
+
+![MiniShop interface preview 3](public/docs/113425.png)
+
+More images: [`public/docs/`](public/docs/).
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[Browser] --> B[Next.js pages / React components]
+    B --> C[Local product catalog JSON]
+    B --> D[Cart Context + reducer]
+    D --> E[Cart UI]
+```
+
+| Layer | Where to look |
+| --- | --- |
+| Pages and dynamic routes | `src/pages/` |
+| Reusable storefront components | `src/components/` |
+| Cart state and reducer | `src/context/CartProvider.js` |
+| Product data | `src/data/products-local.json` |
+| Product screenshots | `public/docs/` |
+
+## Run locally
+
+**Requirements:** Node.js and npm compatible with Next.js 13.3.1.
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000). For a production-style local build:
+
+```bash
+npm run build
+npm run start
+```
+
+The commands are taken from `package.json`. They have **not** been executed during this documentation update.
+
+## Engineering notes
+
+- The cart logic is a standalone reducer; its state is held in the running React application.
+- The current home page imports local product JSON. Firebase is still listed among dependencies, but this README does **not** claim an operational Firebase backend.
+- This is a storefront prototype, not a production payment or inventory system.
+- The repository does not demonstrate automated CI or end-to-end test coverage.
+
+## Demonstration for recruiters
+
+1. Browse products and categories.
+2. Open a product detail page.
+3. Add products to the cart; adjust quantities and inspect totals.
+4. Explain the Context API/reducer state design and data flow.
+
+## Scope and next steps
+
+Potential enhancements include persisted cart state, product administration, real inventory/order APIs, automated tests and an accessible checkout flow. These are **not** represented as completed features.
+
+*Portfolio focus: React, Next.js, component architecture, client-side state management and responsive UI.*
